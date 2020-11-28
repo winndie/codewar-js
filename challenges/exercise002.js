@@ -20,16 +20,16 @@ function countSheep(arr) {
   if (arr === undefined) throw new Error("arr is required");
   // Your code here!
 
-  var count = 0;
+  return arr
+          .reduce(
+            function(acc, val) { 
+              
+              if(val == "sheep")
+                acc++;
 
-  for (var i = 0; i < arr.length ; i++){
-
-    if (arr[i] == "sheep")
-      count++;
-
-  }
-
-  return count;
+              return acc; 
+            }, 0
+          );
 }
 
 function hasMPostCode(person) {

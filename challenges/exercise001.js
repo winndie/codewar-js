@@ -54,23 +54,30 @@ function reverseAllWords(words) {
 function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
   // Add your code here!
-  const TYPE_LINUX = "Linux";
-  var count = 0;
+  return users
+          .reduce(
+            function(acc, val) { 
+              
+              if(val.type == "Linux")
+                acc++;
 
-    users.forEach( function(user)
-      {
-        if (user.type == TYPE_LINUX)
-            count++
-      }
-    );
-
-    return count
+              return acc; 
+            }, 0
+          );
 }
 
 function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
   // Add your code here!
-  return parseFloat( (scores.reduce(function(acc, val) { return acc + val; }, 0) / scores.length).toFixed(2) );
+  return parseFloat( 
+            (
+              scores.reduce(
+                      function(acc, val) { 
+                        return acc + val; }, 0) 
+              / scores.length
+            )
+            .toFixed(2) 
+          );
 }
 
 function simpleFizzBuzz(n) {

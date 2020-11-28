@@ -42,31 +42,13 @@ function reverseWord(word) {
   if (word === undefined) throw new Error("word is required");
   // Add your code here!
 
-  var ans="";
-
-    for (var i = word.length-1; i >= 0 ; i--)
-      ans += word.substr(i,1);
-
-  return ans;
+  return word.split('').reverse().join('');
 }
 
 function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
   // Add your code here!
-  var ansList = new Array(words.length);
-
-  for (var j = 0; j < ansList.length; j++){
-
-    var ans="";    
-
-    for (var i = words[j].length-1; i >= 0 ; i--)
-      ans += words[j].substr(i,1);
-
-    ansList[j] = ans;
-
-  }
-
-  return ansList;
+  return words.map(word => {return reverseWord(word)});
 }
 
 function countLinuxUsers(users) {
@@ -75,10 +57,12 @@ function countLinuxUsers(users) {
   const TYPE_LINUX = "Linux";
   var count = 0;
 
-    for (var i = 0; i < users.length ; i++){
-      if (users[i].type == TYPE_LINUX)
-          count++
-    }
+    users.forEach( function(user)
+      {
+        if (user.type == TYPE_LINUX)
+            count++
+      }
+    );
 
     return count
 }
@@ -86,12 +70,7 @@ function countLinuxUsers(users) {
 function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
   // Add your code here!
-  var mean = 0;
-
-    for (var i = 0; i < scores.length ; i++)
-      mean += scores[i];
-
-  return parseFloat( (mean / scores.length).toFixed(2) );
+  return parseFloat( (scores.reduce(function(acc, val) { return acc + val; }, 0) / scores.length).toFixed(2) );
 }
 
 function simpleFizzBuzz(n) {

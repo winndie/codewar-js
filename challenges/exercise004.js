@@ -3,13 +3,10 @@ function findSmallNums(nums) {
   // Your code here
   var ans = [];
 
-    nums.forEach(
-
-      function (num, i) {
+    nums.forEach( num => {
         if( num < 1 )
           ans.push(num);
-      }
-    );
+      });
 
   return ans;
 }
@@ -20,13 +17,10 @@ function findNamesBeginningWith(names, char) {
   // Your code here
   var ans = [];
 
-    names.forEach(
-
-      function (name, i) {
+    names.forEach( name => {
         if( name.charAt(0) == char )
           ans.push(name);
-      }
-    );
+      });
 
   return ans;
 }
@@ -36,13 +30,10 @@ function findVerbs(words) {
   // Your code here
   var ans = [];
 
-    words.forEach(
-
-      function (word, i) {
+    words.forEach( word => {
         if( word.substr(0,3) == "to " )
           ans.push(word);
-      }
-    );
+      });
 
   return ans;
 }
@@ -52,13 +43,10 @@ function getIntegers(nums) {
   // Your code here
   var ans = [];
 
-    nums.forEach(
-
-      function (num, i) {
+    nums.forEach( num => {
         if( Number.isInteger(num) )
           ans.push(num);
-      }
-    );
+      });
 
   return ans;
 }
@@ -68,12 +56,9 @@ function getCities(users) {
   // Your code here
   var cities = [];
 
-    users.forEach(
-
-      function (user, i) {
+    users.forEach( user => {
           cities.push(user.data.city.displayName);
-      }
-    );
+      });
 
   return cities;
 }
@@ -90,13 +75,10 @@ function findSentencesContaining(sentences, str) {
   // Your code here
   var ans = [];
 
-    sentences.forEach(
-
-      function (sentence, i) {
+    sentences.forEach( sentence => {
         if( sentence.toLowerCase().includes(str.toLowerCase()) )
           ans.push(sentence);
-      }
-    );
+      });
 
   return ans;
 }
@@ -106,12 +88,9 @@ function getLongestSides(triangles) {
   // Your code here
   var ans = [];
 
-    triangles.forEach(
-
-      function (sides, i) {
+    triangles.forEach( sides => {
           ans.push(Math.max.apply(null,sides));
-      }
-    );
+      });
 
   return ans;
 }

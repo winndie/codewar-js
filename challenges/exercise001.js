@@ -55,8 +55,7 @@ function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
   // Add your code here!
   return users
-          .reduce(
-            function(acc, val) { 
+          .reduce( (acc, val) => { 
               
               if(val.type == "Linux")
                 acc++;
@@ -71,8 +70,7 @@ function getMeanScore(scores) {
   // Add your code here!
   return parseFloat( 
             (
-              scores.reduce(
-                      function(acc, val) { 
+              scores.reduce( (acc, val) => { 
                         return acc + val; }, 0) 
               / scores.length
             )

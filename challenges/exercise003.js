@@ -9,9 +9,7 @@ function camelCaseWords(words) {
   // Your code here!
   var ans = "";
 
-    words.forEach(
-    
-        function (word,i){
+    words.forEach( (word,i) => {
 
             if (i==0){
                 ans = word.charAt(0).toLowerCase();
@@ -21,8 +19,7 @@ function camelCaseWords(words) {
                 ans += word.charAt(0).toUpperCase();
                 ans += word.substr(1,word.length-1);
               }
-        }
-    );
+        });
 
   return ans;
 }
@@ -32,9 +29,7 @@ function getTotalSubjects(people) {
   // Your code here!
   var count = 0;
 
-    people.forEach(
-
-        function (person, i) {
+    people.forEach( person => {
           count = count + person.subjects.length;
         }
     );
@@ -47,10 +42,8 @@ function checkIngredients(menu, ingredient) {
   if (!ingredient) throw new Error("ingredient is required");
   // Your code here!
 
-  return menu.some(
-      function (menuItem) {
-        return menuItem.ingredients.some(
-            function (eachIngredient) {
+  return menu.some( menuItem => {
+        return menuItem.ingredients.some( eachIngredient => {
               return eachIngredient == ingredient;
             }
           );
@@ -64,18 +57,14 @@ function duplicateNumbers(arr1, arr2) {
   // Your code here!
   var ans = [];
 
-    arr1.forEach(
+    arr1.forEach( num1 => {
 
-      function (num1, i) {
-
-        if(
-            arr2.some(function(num2){ return num1==num2; }) &&
-           !ans.some(function(ansNum){ return num1==ansNum; })
+        if( arr2.some( num2 => { return num1==num2; }) &&
+           !ans.some( ansNum =>{ return num1==ansNum; })
           )
           ans.push(num1);
 
-      }
-    );
+      });
 
   return ans.sort();
 }

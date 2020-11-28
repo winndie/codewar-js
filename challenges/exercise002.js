@@ -21,8 +21,7 @@ function countSheep(arr) {
   // Your code here!
 
   return arr
-          .reduce(
-            function (acc, val) { 
+          .reduce( (acc, val) => { 
               
               if(val == "sheep")
                 acc++;

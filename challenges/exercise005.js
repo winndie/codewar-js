@@ -2,7 +2,7 @@ const findNextNumber = (nums, n) => {
   if (nums === undefined) throw new Error("nums is required");
   if (n === undefined) throw new Error("n is required");
   // Your code here!
-  var i = nums.findIndex( num => {return num==n;}) + 1;
+  var i = nums.indexOf(n) + 1;
 
     if ( i == 0 || i == nums.length)
       return null;
@@ -38,13 +38,13 @@ const reverseNumber = n => {
 const sumArrays = arrs => {
   if (arrs === undefined) throw new Error("arrs is required");
   // Your code here!
-  var sum=0;
+  var sum = 0;
 
-    arrs.forEach( arr => {
-          arr.forEach( a => {
-                sum = a + sum;
-              });
-        });
+      arrs.forEach( arr => {
+            sum += arr.reduce( (b,val) => {
+                return b + val;
+                });
+            });
 
   return sum;
 };

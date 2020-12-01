@@ -54,7 +54,7 @@ function duplicateNumbers(arr1, arr2) {
   if (arr1 === undefined) throw new Error("arr1 is required");
   if (arr2 === undefined) throw new Error("arr2 is required");
 
-  let ans = [];
+  var ans = [];
 
     arr1.forEach( num1 => {
 

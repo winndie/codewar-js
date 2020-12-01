@@ -1,7 +1,7 @@
 function findSmallNums(nums) {
   if (!nums) throw new Error("nums is required");
-  // Your code here
-  var ans = [];
+
+  let ans = [];
 
     nums.forEach( num => {
         if( num < 1 )
@@ -14,8 +14,8 @@ function findSmallNums(nums) {
 function findNamesBeginningWith(names, char) {
   if (!names) throw new Error("names is required");
   if (!char) throw new Error("char is required");
-  // Your code here
-  var ans = [];
+
+  let ans = [];
 
     names.forEach( name => {
         if( name.charAt(0) == char )
@@ -27,8 +27,8 @@ function findNamesBeginningWith(names, char) {
 
 function findVerbs(words) {
   if (!words) throw new Error("words is required");
-  // Your code here
-  var ans = [];
+
+  let ans = [];
 
     words.forEach( word => {
         if( word.substr(0,3) == "to " )
@@ -40,8 +40,8 @@ function findVerbs(words) {
 
 function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
-  // Your code here
-  var ans = [];
+
+  let ans = [];
 
     nums.forEach( num => {
         if( Number.isInteger(num) )
@@ -53,8 +53,8 @@ function getIntegers(nums) {
 
 function getCities(users) {
   if (!users) throw new Error("users is required");
-  // Your code here
-  var cities = [];
+
+  let cities = [];
 
     users.forEach( user => {
           cities.push(user.data.city.displayName);
@@ -65,15 +65,15 @@ function getCities(users) {
 
 function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
-  // Your code here
-    return nums.map( n => { return parseFloat( Math.sqrt(n).toFixed(2) ) });
+
+  return nums.map( n => { return parseFloat( Math.sqrt(n).toFixed(2) ) });
 }
 
 function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
-  // Your code here
-  var ans = [];
+
+  let ans = [];
 
     sentences.forEach( sentence => {
         if( sentence.toLowerCase().includes(str.toLowerCase()) )
@@ -85,8 +85,8 @@ function findSentencesContaining(sentences, str) {
 
 function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
-  // Your code here
-  var ans = [];
+
+  let ans = [];
 
     triangles.forEach( sides => {
           ans.push(Math.max.apply(null,sides));

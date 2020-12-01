@@ -13,21 +13,21 @@ function isFromManchester(person) {
 function getBusNumbers(people) {
   if (people === undefined) throw new Error("people is required");
 
-  return Math.ceil( people / 40 );
+  return Math.ceil(people / 40);
 }
 
 function countSheep(arr) {
   if (arr === undefined) throw new Error("arr is required");
 
   return arr
-          .reduce( (acc, val) => { 
-              
-              if(val == "sheep")
-                acc++;
+    .reduce((acc, val) => {
 
-              return acc; 
-            }, 0
-          );
+      if (val == "sheep")
+        acc++;
+
+      return acc;
+    }, 0
+    );
 }
 
 function hasMPostCode(person) {

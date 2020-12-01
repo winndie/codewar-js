@@ -3,10 +3,10 @@ function findSmallNums(nums) {
 
   let ans = [];
 
-    nums.forEach( num => {
-        if( num < 1 )
-          ans.push(num);
-      });
+  nums.forEach(num => {
+    if (num < 1)
+      ans.push(num);
+  });
 
   return ans;
 }
@@ -17,10 +17,10 @@ function findNamesBeginningWith(names, char) {
 
   let ans = [];
 
-    names.forEach( name => {
-        if( name.charAt(0) == char )
-          ans.push(name);
-      });
+  names.forEach(name => {
+    if (name.charAt(0) == char)
+      ans.push(name);
+  });
 
   return ans;
 }
@@ -30,10 +30,10 @@ function findVerbs(words) {
 
   let ans = [];
 
-    words.forEach( word => {
-        if( word.substr(0,3) == "to " )
-          ans.push(word);
-      });
+  words.forEach(word => {
+    if (word.substr(0, 3) == "to ")
+      ans.push(word);
+  });
 
   return ans;
 }
@@ -43,10 +43,10 @@ function getIntegers(nums) {
 
   let ans = [];
 
-    nums.forEach( num => {
-        if( Number.isInteger(num) )
-          ans.push(num);
-      });
+  nums.forEach(num => {
+    if (Number.isInteger(num))
+      ans.push(num);
+  });
 
   return ans;
 }
@@ -56,9 +56,9 @@ function getCities(users) {
 
   let cities = [];
 
-    users.forEach( user => {
-          cities.push(user.data.city.displayName);
-      });
+  users.forEach(user => {
+    cities.push(user.data.city.displayName);
+  });
 
   return cities;
 }
@@ -66,7 +66,7 @@ function getCities(users) {
 function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
 
-  return nums.map( n => { return parseFloat( Math.sqrt(n).toFixed(2) ) });
+  return nums.map(n => { return parseFloat(Math.sqrt(n).toFixed(2)) });
 }
 
 function findSentencesContaining(sentences, str) {
@@ -75,10 +75,10 @@ function findSentencesContaining(sentences, str) {
 
   let ans = [];
 
-    sentences.forEach( sentence => {
-        if( sentence.toLowerCase().includes(str.toLowerCase()) )
-          ans.push(sentence);
-      });
+  sentences.forEach(sentence => {
+    if (sentence.toLowerCase().includes(str.toLowerCase()))
+      ans.push(sentence);
+  });
 
   return ans;
 }
@@ -88,9 +88,9 @@ function getLongestSides(triangles) {
 
   let ans = [];
 
-    triangles.forEach( sides => {
-          ans.push(Math.max.apply(null,sides));
-      });
+  triangles.forEach(sides => {
+    ans.push(Math.max.apply(null, sides));
+  });
 
   return ans;
 }

@@ -1,7 +1,7 @@
 function getSquares(nums) {
   if (nums === undefined) throw new Error("nums is required");
 
-  return nums.map( n => { return n * n });
+  return nums.map(n => { return n * n });
 }
 
 function camelCaseWords(words) {
@@ -9,17 +9,17 @@ function camelCaseWords(words) {
 
   let ans = "";
 
-    words.forEach( (word,i) => {
+  words.forEach((word, i) => {
 
-            if (i==0){
-                ans = word.charAt(0).toLowerCase();
-                ans += word.substr(1,word.length-1);
-              }
-            else {
-                ans += word.charAt(0).toUpperCase();
-                ans += word.substr(1,word.length-1);
-              }
-        });
+    if (i == 0) {
+      ans = word.charAt(0).toLowerCase();
+      ans += word.substr(1, word.length - 1);
+    }
+    else {
+      ans += word.charAt(0).toUpperCase();
+      ans += word.substr(1, word.length - 1);
+    }
+  });
 
   return ans;
 }
@@ -29,10 +29,10 @@ function getTotalSubjects(people) {
 
   let count = 0;
 
-    people.forEach( person => {
-          count = count + person.subjects.length;
-        }
-    );
+  people.forEach(person => {
+    count = count + person.subjects.length;
+  }
+  );
 
   return count;
 }
@@ -40,13 +40,13 @@ function getTotalSubjects(people) {
 function checkIngredients(menu, ingredient) {
   if (menu === undefined) throw new Error("menu is required");
   if (!ingredient) throw new Error("ingredient is required");
-  
-  return menu.some( menuItem => {
-        return menuItem.ingredients.some( eachIngredient => {
-              return eachIngredient == ingredient;
-            }
-          );
-      }
+
+  return menu.some(menuItem => {
+    return menuItem.ingredients.some(eachIngredient => {
+      return eachIngredient == ingredient;
+    }
+    );
+  }
   );
 }
 
@@ -56,14 +56,14 @@ function duplicateNumbers(arr1, arr2) {
 
   let ans = [];
 
-    arr1.forEach( num1 => {
+  arr1.forEach(num1 => {
 
-        if( arr2.some( num2 => { return num1==num2; }) &&
-           !ans.some( ansNum =>{ return num1==ansNum; })
-          )
-          ans.push(num1);
+    if (arr2.some(num2 => { return num1 == num2; }) &&
+      !ans.some(ansNum => { return num1 == ansNum; })
+    )
+      ans.push(num1);
 
-      });
+  });
 
   return ans.sort();
 }

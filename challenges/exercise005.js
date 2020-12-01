@@ -4,27 +4,27 @@ const findNextNumber = (nums, n) => {
 
   let i = nums.indexOf(n) + 1;
 
-    if ( i == 0 || i == nums.length)
-      return null;
-    else
-      return nums[i];
+  if (i == 0 || i == nums.length)
+    return null;
+  else
+    return nums[i];
 };
 
 const count1sand0s = str => {
   if (str === undefined) throw new Error("str is required");
 
   let count = new Map();
-      count.set(0,0);
-      count.set(1,0);
+  count.set(0, 0);
+  count.set(1, 0);
 
-    str.split("").forEach( s => {
+  str.split("").forEach(s => {
 
-        if(s == 0)
-          count.set(0,count.get(0) + 1);
-        else if(s == 1)
-          count.set(1,count.get(1) + 1);
+    if (s == 0)
+      count.set(0, count.get(0) + 1);
+    else if (s == 1)
+      count.set(1, count.get(1) + 1);
 
-    });
+  });
 
   return Object.fromEntries(count);
 };
@@ -40,11 +40,11 @@ const sumArrays = arrs => {
 
   let sum = 0;
 
-      arrs.forEach( arr => {
-            sum += arr.reduce( (b,val) => {
-                return b + val;
-                });
-            });
+  arrs.forEach(arr => {
+    sum += arr.reduce((b, val) => {
+      return b + val;
+    });
+  });
 
   return sum;
 };
@@ -54,12 +54,12 @@ const arrShift = arr => {
 
   let zrr = arr.slice();
 
-    if(arr.length > 1){
-      zrr[0] = arr[arr.length-1];
-      zrr[arr.length-1] = arr[0];
-    }
+  if (arr.length > 1) {
+    zrr[0] = arr[arr.length - 1];
+    zrr[arr.length - 1] = arr[0];
+  }
 
-  return zrr; 
+  return zrr;
 };
 
 const findNeedle = (haystack, searchTerm) => {
@@ -68,10 +68,10 @@ const findNeedle = (haystack, searchTerm) => {
 
   let searchTermLower = searchTerm.toLowerCase();
 
-  return  Object.values(haystack).some(
-              val => {            
-                return (val.toString().toLowerCase().search(searchTermLower) > -1);        
-          });
+  return Object.values(haystack).some(
+    val => {
+      return (val.toString().toLowerCase().search(searchTermLower) > -1);
+    });
 };
 
 const getWordFrequencies = str => {
@@ -81,18 +81,18 @@ const getWordFrequencies = str => {
   let set = new Set(arr);
   let map = new Map();
 
-      set.forEach(
-        setVal => {
-          let count = 0;
+  set.forEach(
+    setVal => {
+      let count = 0;
 
-          arr.forEach(
-            arrVal => {
-              if(setVal == arrVal)
-                count++;
-            });
-
-          map.set(setVal,count);
+      arr.forEach(
+        arrVal => {
+          if (setVal == arrVal)
+            count++;
         });
+
+      map.set(setVal, count);
+    });
 
   return Object.fromEntries(map);
 };

@@ -1,8 +1,8 @@
 const findNextNumber = (nums, n) => {
   if (nums === undefined) throw new Error("nums is required");
   if (n === undefined) throw new Error("n is required");
-  // Your code here!
-  var i = nums.indexOf(n) + 1;
+
+  let i = nums.indexOf(n) + 1;
 
     if ( i == 0 || i == nums.length)
       return null;
@@ -12,8 +12,8 @@ const findNextNumber = (nums, n) => {
 
 const count1sand0s = str => {
   if (str === undefined) throw new Error("str is required");
-  // Your code here!
-  var count = new Map();
+
+  let count = new Map();
       count.set(0,0);
       count.set(1,0);
 
@@ -31,14 +31,14 @@ const count1sand0s = str => {
 
 const reverseNumber = n => {
   if (n === undefined) throw new Error("n is required");
-  // Your code here!
+
   return parseInt(n.toString().split("").reverse().join(""));
 };
 
 const sumArrays = arrs => {
   if (arrs === undefined) throw new Error("arrs is required");
-  // Your code here!
-  var sum = 0;
+
+  let sum = 0;
 
       arrs.forEach( arr => {
             sum += arr.reduce( (b,val) => {
@@ -51,8 +51,8 @@ const sumArrays = arrs => {
 
 const arrShift = arr => {
   if (arr === undefined) throw new Error("arr is required");
-  // Your code here!
-  var zrr = arr.slice();
+
+  let zrr = arr.slice();
 
     if(arr.length > 1){
       zrr[0] = arr[arr.length-1];
@@ -65,9 +65,8 @@ const arrShift = arr => {
 const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
   if (searchTerm === undefined) throw new Error("searchTerm is required");
-  // Your code here!
 
-  var searchTermLower = searchTerm.toLowerCase();
+  let searchTermLower = searchTerm.toLowerCase();
 
   return  Object.values(haystack).some(
               val => {            
@@ -77,14 +76,14 @@ const findNeedle = (haystack, searchTerm) => {
 
 const getWordFrequencies = str => {
   if (str === undefined) throw new Error("str is required");
-  // Your code here!
-  var arr = str.toLowerCase().replace(/[^a-z ]/g, '').split(" ");
-  var set = new Set(arr);
-  var map = new Map();
+
+  let arr = str.toLowerCase().replace(/[^a-z ]/g, '').split(" ");
+  let set = new Set(arr);
+  let map = new Map();
 
       set.forEach(
         setVal => {
-          var count = 0;
+          let count = 0;
 
           arr.forEach(
             arrVal => {

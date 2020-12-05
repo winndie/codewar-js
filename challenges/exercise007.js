@@ -95,9 +95,28 @@ const getScreentimeAlertList = (users, date) => {
 const hexToRGB = hexStr => {
   if (hexStr === undefined) throw new Error("hexStr is required");
 
-  let rgbStr = null;
+  let hexMap = new Map();
+  hexMap.set('0', 0);
+  hexMap.set('1', 1);
+  hexMap.set('2', 2);
+  hexMap.set('3', 3);
+  hexMap.set('4', 4);
+  hexMap.set('5', 5);
+  hexMap.set('6', 6);
+  hexMap.set('7', 7);
+  hexMap.set('8', 8);
+  hexMap.set('9', 9);
+  hexMap.set('A', 10);
+  hexMap.set('B', 11);
+  hexMap.set('C', 12);
+  hexMap.set('D', 13);
+  hexMap.set('E', 14);
+  hexMap.set('F', 15);
 
-  return rgbStr;
+  return "rgb(" +
+    parseInt(hexMap.get([...hexStr][1]) * 16 + hexMap.get([...hexStr][2])) + "," +
+    parseInt(hexMap.get([...hexStr][3]) * 16 + hexMap.get([...hexStr][4])) + "," +
+    parseInt(hexMap.get([...hexStr][5]) * 16 + hexMap.get([...hexStr][6])) + ")";
 };
 
 /**
@@ -132,7 +151,7 @@ const findWinner = board => {
   boardMap.set('H', board[2][1]);
   boardMap.set('I', board[2][2]);
 
-  function findTheWinner(tile) {
+  function isTheWinner(tile) {
 
     let tileLoc = [...boardMap.entries()]
       .filter(({ 1: v }) => v == tile)
@@ -143,7 +162,7 @@ const findWinner = board => {
       return true;
   }
 
-  return findTheWinner("X") ? "X" : findTheWinner("0") ? "0" : null;
+  return isTheWinner("X") ? "X" : isTheWinner("0") ? "0" : null;
 };
 
 module.exports = {

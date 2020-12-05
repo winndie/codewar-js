@@ -16,7 +16,7 @@ describe("sumDigits", () => {
 describe("createRange", () => {
 
     test("range of numbers as an array", () => {
-        expect(createRange(3, 11, 2)).toBe([3, 5, 7, 9, 11]);
+        expect(createRange(3, 11, 2)).toStrictEqual([3, 5, 7, 9, 11]);
     });
 });
 
@@ -45,7 +45,7 @@ describe("getScreentimeAlertList", () => {
                     ]
                 },
             ]
-            , "2019-05-03")).toBe(["beth_1234", "sam_j_1989"]);
+            , "2019-05-03")).toStrictEqual(["beth_1234", "sam_j_1989"]);
     });
 });
 

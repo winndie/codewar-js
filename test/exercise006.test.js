@@ -45,7 +45,7 @@ describe("isItPrime", () => {
 describe("createMatrix", () => {
 
   test("return an array of n arrays", () => {
-    expect(createMatrix(2, 'happy')).toBe([['happy', 'happy'], ['happy', 'happy']]);
+    expect(createMatrix(2, 'happy')).toStrictEqual([['happy', 'happy'], ['happy', 'happy']]);
   });
 });
 

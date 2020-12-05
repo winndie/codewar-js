@@ -82,8 +82,6 @@ const createMatrix = (n, fill) => {
   for (let j = 0; j < n; j++)
     arr1.push(arr2);
 
-  console.log(arr1);
-
   return arr1;
 };
 

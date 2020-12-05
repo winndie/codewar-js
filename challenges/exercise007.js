@@ -20,13 +20,7 @@ const createRange = (start, end, step) => {
   if (start === undefined) throw new Error("start is required");
   if (end === undefined) throw new Error("end is required");
 
-  //  let arr = Array.apply(null,{length:end}).fill(start).map((v,i)=> v = v + (i * step)).filter(v=>v<=end);
-  //  let arr = Array.from(new Array(end)).fill(start).map((v,i)=> v = v + (i * step)).filter(v=>v<=end);
-  //  let arr = new Array(end).fill(start).map((v,i)=> v = v + (i * step)).filter(v=>v<=end);
-  let arr = Array(end).fill(start).map((v, i) => v = v + (i * step)).filter(v => v <= end)
-  console.log("createRange " + arr);
-
-  return arr;
+  return Array(end).fill(start).map((v, i) => v = v + (i * step)).filter(v => v <= end);
 };
 
 /**
@@ -76,8 +70,6 @@ const getScreentimeAlertList = (users, date) => {
 
       }, 0)
   });
-
-  console.log(alertList);
 
   return alertList;
 };

@@ -5,7 +5,7 @@
 const sumDigits = n => {
   if (n === undefined) throw new Error("n is required");
 
-  return 6;
+  return [...n.toString()].reduce((a, v) => parseInt(a + parseInt(v)), 0);
 };
 
 /**
@@ -19,6 +19,15 @@ const sumDigits = n => {
 const createRange = (start, end, step) => {
   if (start === undefined) throw new Error("start is required");
   if (end === undefined) throw new Error("end is required");
+
+  //  let arr = Array.apply(null,{length:end}).fill(start).map((v,i)=> v = v + (i * step)).filter(v=>v<=end);
+  //  let arr = Array.from(new Array(end)).fill(start).map((v,i)=> v = v + (i * step)).filter(v=>v<=end);
+  //  let arr = new Array(end).fill(start).map((v,i)=> v = v + (i * step)).filter(v=>v<=end);
+  let arr = Array(end).fill(start).map((v, i) => v = v + (i * step)).filter(v => v <= end);
+
+  //console.log("createRange "  + arr);
+
+  return arr;
 };
 
 /**
@@ -53,6 +62,23 @@ const createRange = (start, end, step) => {
 const getScreentimeAlertList = (users, date) => {
   if (users === undefined) throw new Error("users is required");
   if (date === undefined) throw new Error("date is required");
+
+  let alertList = [];
+
+  users.forEach(eachUser => {
+    eachUser.screenTime.filter(eachScreen =>
+      eachScreen.date == date).reduce((sumOfDate, eachDate) => {
+
+        Object.values(eachDate.usage).reduce((sumOfApp, eachApp) => sumOfDate = sumOfApp + eachApp, 0)
+
+        if (sumOfDate > 100) alertList.push(eachUser.username);
+
+      }, 0)
+  });
+
+  //console.log(alertList);
+
+  return alertList;
 };
 
 /**
@@ -67,6 +93,10 @@ const getScreentimeAlertList = (users, date) => {
  */
 const hexToRGB = hexStr => {
   if (hexStr === undefined) throw new Error("hexStr is required");
+
+  let rgbStr = null;
+
+  return rgbStr;
 };
 
 /**
@@ -81,6 +111,10 @@ const hexToRGB = hexStr => {
  */
 const findWinner = board => {
   if (board === undefined) throw new Error("board is required");
+
+  let winner;
+
+  return winner;
 };
 
 module.exports = {

@@ -65,10 +65,12 @@ const getScreentimeAlertList = (users, date) => {
   let alertList = [];
 
   users.forEach(eachUser => {
-    eachUser.screenTime.filter(eachScreen =>
-      eachScreen.date == date).reduce((sumOfDate, eachDate) => {
+    eachUser.screenTime
+      .filter(eachScreen => eachScreen.date == date)
+      .reduce((sumOfDate, eachDate) => {
 
-        Object.values(eachDate.usage).reduce((sumOfApp, eachApp) => sumOfDate = sumOfApp + eachApp, 0)
+        Object.values(eachDate.usage)
+          .reduce((sumOfApp, eachApp) => sumOfDate = sumOfApp + eachApp, 0)
 
         if (sumOfDate > 100) alertList.push(eachUser.username);
 
@@ -111,9 +113,37 @@ const hexToRGB = hexStr => {
 const findWinner = board => {
   if (board === undefined) throw new Error("board is required");
 
-  let winner = null;
+  //  tile location for board
+  //  [
+  //   [A, B, C],
+  //   [D, E, F],
+  //   [G, H, I]
+  //  ]
+  let winSet = ['ABC', 'ADG', 'AEI', 'BEH', 'DEF', 'CFI', 'GHI', 'CEG'];
 
-  return winner;
+  let boardMap = new Map();
+  boardMap.set('A', board[0][0]);
+  boardMap.set('B', board[0][1]);
+  boardMap.set('C', board[0][2]);
+  boardMap.set('D', board[1][0]);
+  boardMap.set('E', board[1][1]);
+  boardMap.set('F', board[1][2]);
+  boardMap.set('G', board[2][0]);
+  boardMap.set('H', board[2][1]);
+  boardMap.set('I', board[2][2]);
+
+  function findTheWinner(tile) {
+
+    let tileLoc = [...boardMap.entries()]
+      .filter(({ 1: v }) => v == tile)
+      .map(([k]) => k)
+      .join('');
+
+    if (winSet.some(set => [...set].every(s => tileLoc.includes(s))))
+      return true;
+  }
+
+  return findTheWinner("X") ? "X" : findTheWinner("0") ? "0" : null;
 };
 
 module.exports = {

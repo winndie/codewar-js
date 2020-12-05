@@ -38,7 +38,7 @@ describe("getComplementaryDNA", () => {
 describe("isItPrime", () => {
 
   test("return true/false depending on whether it is a prime number or not", () => {
-    expect(isItPrime(0)).toBe(true);
+    expect(isItPrime(7)).toBe(true);
   });
 });
 

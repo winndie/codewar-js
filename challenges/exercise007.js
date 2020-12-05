@@ -111,7 +111,7 @@ const hexToRGB = hexStr => {
 const findWinner = board => {
   if (board === undefined) throw new Error("board is required");
 
-  let winner;
+  let winner = null;
 
   return winner;
 };
